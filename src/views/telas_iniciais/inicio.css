@@ -1,0 +1,47 @@
+#app{
+  background-image: url('/src/assets/img/background-melhorado.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: 20% 30%;
+  position: relative;
+}
+
+#app::before {
+  content: '';
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.12); 
+  z-index: 1;
+}
+
+.arrow-button{
+  display: inline-flex;
+  background-color: #27333F;
+  z-index: 100;
+  padding: 14px 44px;
+  border-radius: 5px;
+  gap: 15px;
+  text-decoration: none;
+  transition: 0.5s;
+  margin-top: 9%;
+  align-items: center;
+}
+
+.arrow-button:hover{
+  background-color: #192733;
+}
+
+.arrow-button img {
+  width: 22px;
+  margin-top: 2px;
+}
+
+.arrow-button span {
+  color: #DCE6F5;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.313rem;
+}
