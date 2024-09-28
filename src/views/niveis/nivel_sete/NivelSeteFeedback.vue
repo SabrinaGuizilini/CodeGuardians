@@ -303,7 +303,11 @@
                           <p>{{ caso.saida }}</p>
                         </div>
                         <img class="correcao-img-ct" v-if="correcoes_cts[index]" src="@/assets/img/acerto.png" alt="acerto" />
-                        <img class="correcao-img-ct" v-else src="@/assets/img/erro.png" alt="erro" />
+                        <img class="correcao-img-ct" v-if="!correcoes_cts[index] && !cts_excedentes[index]" src="@/assets/img/erro.png" alt="erro" />
+                        <div class="excedente" v-if="!correcoes_cts[index] && cts_excedentes[index]">
+                          <img src="@/assets/img/warning.png" alt="excedente">
+                          <p>(excedente)</p>
+                        </div>
                       </div>
                     </div>
               </div>
@@ -385,6 +389,7 @@ export default {
       classes_invalidas: ['em branco', 'não selecionado', 'inválido (a)', 'não OK', 'inválido (a)', 'em branco', 'op. de máquinas', '= 1234'],
       validas: [],
       invalidas: [],
+      cts_excedentes: []
     };
   },
   mounted() {
@@ -393,6 +398,7 @@ export default {
 
     this.casosTeste = [...store.respostas_fase_dois.cts_missao_sete];
     this.correcoes_cts = [...store.respostas_fase_dois.correcao_missao_sete];
+    this.cts_excedentes = [...store.respostas_fase_dois.cts_excedentes_missao_sete];
     setTimeout(this.animarPontuacao, 1500);
   },
   methods: {
@@ -841,6 +847,24 @@ export default {
   padding: 6px;
   border-radius: 3px;
   border: 1.4px solid #b6bbe1;
+}
+
+.excedente {
+  position: absolute;
+  left: 300px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.excedente img {
+  width: 18px;
+}
+
+.excedente p {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 13px;
+  color: #c7cfe6;
 }
 
 </style>

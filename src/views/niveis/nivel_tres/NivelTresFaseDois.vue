@@ -220,6 +220,7 @@ export default {
         if((caso.entrada == -1 && caso.saida == "Mensagem 'Sensor quebrado!'") || (caso.entrada == 0 && caso.saida == "Código 1") || (caso.entrada == 99 && caso.saida == "Código 1") || (caso.entrada == 100 && caso.saida == "Código 0") || (caso.entrada == 240 && caso.saida == "Código 0") || (caso.entrada == 241 && caso.saida == "Código 2") || (caso.entrada == 10000 && caso.saida == "Código 2") || (caso.entrada == 10001 && caso.saida == "Mensagem 'Sensor quebrado!'")) {
           this.pontuacao += 5;
           store.respostas_fase_dois.correcao_missao_tres.push(true);
+          store.respostas_fase_dois.cts_excedentes_missao_tres.push(false);
         }
         else if(caso.entrada < -1 && caso.saida == "Mensagem 'Sensor quebrado!'") {
            if (cts_anteriores.some((c) =>
@@ -227,9 +228,11 @@ export default {
                   c.saida === "Mensagem 'Sensor quebrado!'")) {
                     this.pontuacao -= 5;
                     store.respostas_fase_dois.correcao_missao_tres.push(false);
+                    store.respostas_fase_dois.cts_excedentes_missao_tres.push(true);
             } else {
               this.pontuacao += 5;
               store.respostas_fase_dois.correcao_missao_tres.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_tres.push(false);
             }
         }
         else if(caso.entrada > 10001 && caso.saida == "Mensagem 'Sensor quebrado!'") {
@@ -238,9 +241,11 @@ export default {
                   c.saida === "Mensagem 'Sensor quebrado!'")) {
                     this.pontuacao -= 5;
                     store.respostas_fase_dois.correcao_missao_tres.push(false);
+                    store.respostas_fase_dois.cts_excedentes_missao_tres.push(true);
             } else {
               this.pontuacao += 5;
               store.respostas_fase_dois.correcao_missao_tres.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_tres.push(false);
             }
         }
         else if((caso.entrada > 0 && caso.entrada < 99) && caso.saida == "Código 1") {
@@ -249,9 +254,11 @@ export default {
                   c.saida === "Código 1")) {
                     this.pontuacao -= 5;
                     store.respostas_fase_dois.correcao_missao_tres.push(false);
+                    store.respostas_fase_dois.cts_excedentes_missao_tres.push(true);
             } else {
               this.pontuacao += 5;
               store.respostas_fase_dois.correcao_missao_tres.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_tres.push(false);
             }
         }
         else if((caso.entrada > 241 && caso.entrada < 10000) && caso.saida == "Código 2") {
@@ -260,9 +267,11 @@ export default {
                   c.saida === "Código 2")) {
                     this.pontuacao -= 5;
                     store.respostas_fase_dois.correcao_missao_tres.push(false);
+                    store.respostas_fase_dois.cts_excedentes_missao_tres.push(true);
             } else {
               this.pontuacao += 5;
               store.respostas_fase_dois.correcao_missao_tres.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_tres.push(false);
             }
         }
         else if((caso.entrada > 100 && caso.entrada < 240) && caso.saida == "Código 0") {
@@ -271,14 +280,17 @@ export default {
                   c.saida === "Código 0")) {
                     this.pontuacao -= 5;
                     store.respostas_fase_dois.correcao_missao_tres.push(false);
+                    store.respostas_fase_dois.cts_excedentes_missao_tres.push(true);
             } else {
               this.pontuacao += 5;
               store.respostas_fase_dois.correcao_missao_tres.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_tres.push(false);
             }
         }
         else {
            this.pontuacao -= 5;
            store.respostas_fase_dois.correcao_missao_tres.push(false);
+           store.respostas_fase_dois.cts_excedentes_missao_tres.push(false);
         }
         cts_anteriores.push(caso);
       });
@@ -301,7 +313,7 @@ export default {
 }
 
 .level__content {
-  height: 88%;
+  height: calc(100% - 70px);
   display: flex;
 }
 

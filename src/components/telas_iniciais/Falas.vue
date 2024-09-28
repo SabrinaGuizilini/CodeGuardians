@@ -180,4 +180,70 @@ export default {
   font-family: "Chakra Petch", sans-serif;
   font-size: 1.313rem;
 }
+
+@media (min-width: 1500px) {
+  .balao {
+    width: 64rem;
+  }
+  .balao::after {
+    left: -7.5%;
+  }
+  #btn-voltar {
+    right: 55%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .balao {
+    width: 70rem;
+  }
+  .balao::after {
+    left: -6.85%;
+  }
+  #btn-voltar {
+    right: 58%;
+  }
+}
+
+@media (min-width: 1700px) {
+  #btn-voltar {
+    right: 60%;
+  }
+}
+
+@media (min-width: 1850px) {
+  #btn-voltar {
+    right: 65%;
+  }
+}
+
+@media (min-width: 1800px) {
+  .balao {
+    width: 80rem;
+  }
+  .balao::after {
+    left: -5.99%;
+  }
+}
+
+@media (min-width: 1900px) {
+  .balao {
+    width: 87rem;
+  }
+  .balao::after {
+    left: -5.5%;
+  }
+}
+
+@media (min-height: 700px) {
+  .balao {
+    height: 56vh;
+  }
+}
+
+@media (min-height: 800px) {
+  .balao {
+    height: 50vh;
+  }
+}
 </style>

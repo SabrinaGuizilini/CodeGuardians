@@ -185,7 +185,7 @@ export default {
   }
 
   .level__content{
-    height: 88%;
+    height: calc(100% - 70px);
     display: flex;
   }
 

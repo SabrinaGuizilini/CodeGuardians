@@ -97,7 +97,7 @@ export default {
     validarRespostas(event) {
       event.preventDefault();
 
-      if(store.respostas_fase_um.missao_cinco_pt1_correta && this.cond_selecionada === 'NC-MSG - Número de caracteres da mensagem' && this.respostas[0] == '9' && this.respostas[1] == '10' && this.respostas[2] == '70' && this.respostas[3] == '71') {
+      if(store.respostas_fase_um.missao_cinco_pt1_correta && this.cond_selecionada === 'NC-MSG - Número de caracteres da mensagem' && ((this.respostas[0] == '9' && this.respostas[1] == '10' && this.respostas[2] == '70' && this.respostas[3] == '71') || (this.respostas[0] == '71' && this.respostas[1] == '70' && this.respostas[2] == '10' && this.respostas[3] == '9'))) {
         store.pontuacaoJogador.pont_fases_niveis[4][0] = 40;
       }
      
@@ -119,7 +119,7 @@ export default {
   }
 
   .level__content{
-    height: 88%;
+    height: calc(100% - 70px);
     display: flex;
   }
 

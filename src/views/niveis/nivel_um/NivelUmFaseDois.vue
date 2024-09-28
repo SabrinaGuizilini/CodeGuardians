@@ -213,18 +213,22 @@ export default {
               )
             ) {
               this.pontuacao -= 5;
-              store.respostas_fase_dois.correcao_missao_um.push(false);
+              store.respostas_fase_dois.correcao_missao_um.push(false); 
+              store.respostas_fase_dois.cts_excedentes_missao_um.push(true);
             } else {
               this.pontuacao += 5;
               store.respostas_fase_dois.correcao_missao_um.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_um.push(false);
             }
           } else {
             this.pontuacao += 5;
             store.respostas_fase_dois.correcao_missao_um.push(true);
+            store.respostas_fase_dois.cts_excedentes_missao_um.push(false);
           }
         } else {
           this.pontuacao -= 5;
           store.respostas_fase_dois.correcao_missao_um.push(false);
+          store.respostas_fase_dois.cts_excedentes_missao_um.push(false);
         }
 
         cts_anteriores.push(caso);
@@ -248,7 +252,7 @@ export default {
 }
 
 .level__content {
-  height: 88%;
+  height: calc(100% - 70px);
   display: flex;
 }
 

@@ -51,7 +51,7 @@
             <a href="#" :class="{ disabled: isDivVisible }" class="ativa-btn-deteccao" @click="retorno_deteccao">OK</a>
           </div>
 
-          <span class="alerta-e-msg"><b>Alerta emitido:</b> {{ alerta }}</span>
+          <span class="alerta-e-msg alerta-emitido"><b>Alerta emitido:</b> {{ alerta }}</span>
           <span class="alerta-e-msg">{{ mensagem }}</span>
 
           </div>
@@ -78,8 +78,10 @@
         />
         </div>
         <a href="#" class="reportar-falha" @click="validaFalha">
-          <img src="@/assets/img/bug (1).png" alt="reportar falha">
-          <span>Reportar falha</span>
+          <div class="reportar-falha-inner">
+            <img src="@/assets/img/bug (1).png" alt="reportar falha">
+            <span>Reportar falha</span>
+          </div>
         </a>
 
         <a href="#" class="dica" v-if="!usouTodasDicas" @click="open_modal2">
@@ -116,7 +118,7 @@
       :isVisible="show_modalDados"
       @close="show_modalDados = false"
       :conteudos="listaConteudos"
-      :top="'2%'" 
+      :bottom="'2%'" 
       :left="'3%'"
     />
   </div>
@@ -559,7 +561,7 @@ export default {
 }
 
 .level__content {
-  height: 88%;
+  height: calc(100% - 70px);
   display: flex;
 }
 
@@ -957,18 +959,28 @@ label{
 }
 
 .reportar-falha {
-  margin-top: 12px;
-  margin-left: 5px;
-  display: inline-flex;
+  /* margin-top: 12px;
+  margin-left: 5px; */
+  /* display: inline-flex; */
+  display: block;
+  width: 186px;
+  margin: 10px auto;
   background-color: #d6d8e7;
   border: 2px solid #1e215a;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border-radius: 5px;
   gap: 10px;
   text-decoration: none;
   align-items: center;
   transition: 0.2s;
-  transform: translateX(138%);
+  /* transform: translateX(138%); */
+}
+
+.reportar-falha-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .reportar-falha img {
@@ -1117,11 +1129,26 @@ input[type="number"] {
 
 .obs2 {
   font-family: "Bai Jamjuree", sans-serif;
-  display: inline-block;
+  display: block;
   font-size: 13px;
   color: #112a53;
   margin-top: 3px;
   margin-left: 14px;
   font-weight: 500;
+}
+
+@media (min-height: 700px) {
+  .deteccao-falhas-input {
+    margin-top: 25px;
+  }
+  .ambiente .alerta-emitido {
+    margin-top: 14px;
+  }
+  .inputs-envio-alerta {
+    margin: 24px auto 8px auto;
+  }
+  .alert-box {
+    bottom: 20px;
+  }
 }
 </style>

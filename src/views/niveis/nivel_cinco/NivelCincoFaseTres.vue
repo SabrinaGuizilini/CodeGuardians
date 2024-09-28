@@ -66,8 +66,10 @@
 
         </div>
         <a href="#" class="reportar-falha" @click="validaFalha">
-          <img src="@/assets/img/bug (1).png" alt="reportar falha">
-          <span>Reportar falha</span>
+          <div class="reportar-falha-inner">
+            <img src="@/assets/img/bug (1).png" alt="reportar falha">
+            <span>Reportar falha</span>
+          </div>
         </a>
 
         <a href="#" class="dica" @click="open_modal2">
@@ -351,7 +353,7 @@ export default {
 }
 
 .level__content {
-  height: 88%;
+  height: calc(100% - 70px);
   display: flex;
 }
 
@@ -736,18 +738,28 @@ label{
 }
 
 .reportar-falha {
-  margin-top: 12px;
-  margin-left: 5px;
-  display: inline-flex;
+  /* margin-top: 12px;
+  margin-left: 5px; */
+  /* display: inline-flex; */
+  display: block;
+  width: 186px;
+  margin: 10px auto;
   background-color: #d6d8e7;
   border: 2px solid #1e215a;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border-radius: 5px;
   gap: 10px;
   text-decoration: none;
   align-items: center;
   transition: 0.2s;
-  transform: translateX(138%);
+  /* transform: translateX(138%); */
+}
+
+.reportar-falha-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .reportar-falha img {
@@ -870,6 +882,24 @@ label{
 
 .dica:hover {
   background-color: #0f1444;
+}
+
+@media (min-height: 680px) {
+  .ambiente {
+    height: 380px;
+  }
+  .container_ID {
+    margin-top: 50px;
+  }
+}
+
+@media (min-height: 800px) {
+  .ambiente {
+    height: 480px;
+  }
+   .container_ID {
+    margin-top: 90px;
+  }
 }
 
 </style>

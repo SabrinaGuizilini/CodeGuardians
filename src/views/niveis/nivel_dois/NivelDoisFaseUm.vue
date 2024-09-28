@@ -86,7 +86,7 @@ export default {
     validarRespostas(event) {
       event.preventDefault();
 
-      if(this.respostas[0] === -1 && this.respostas[1] === 0 && this.respostas[2] === 3 && this.respostas[3] === 4) {
+      if((this.respostas[0] === -1 && this.respostas[1] === 0 && this.respostas[2] === 3 && this.respostas[3] === 4) || (this.respostas[0] === 4 && this.respostas[1] === 3 && this.respostas[2] === 0 && this.respostas[3] === -1)) {
         store.pontuacaoJogador.pont_fases_niveis[1][0] = 30;
       }
 
@@ -105,7 +105,7 @@ export default {
   }
 
   .level__content{
-    height: 88%;
+    height: calc(100% - 70px);
     display: flex;
   }
 

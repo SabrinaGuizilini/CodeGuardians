@@ -50,8 +50,10 @@
 
         </div>
         <a href="#" class="reportar-falha" @click="validaFalha">
-          <img src="@/assets/img/bug (1).png" alt="reportar falha">
-          <span>Reportar falha</span>
+          <div class="reportar-falha-inner">
+            <img src="@/assets/img/bug (1).png" alt="reportar falha">
+            <span>Reportar falha</span>
+          </div>
         </a>
       </div>
     </div>
@@ -178,7 +180,7 @@ export default {
 }
 
 .level__content {
-  height: 88%;
+  height: calc(100% - 70px);
   display: flex;
 }
 
@@ -466,7 +468,7 @@ label{
   background-color: #dce1eb;
   border-radius: 3px;
   width: 96%;
-  height: 62%;
+  height: 280px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
@@ -521,18 +523,28 @@ label{
 }
 
 .reportar-falha {
-  margin-top: 12px;
-  margin-left: 5px;
-  display: inline-flex;
+  /* margin-top: 12px;
+  margin-left: 5px; */
+  /* display: inline-flex; */
+  display: block;
+  width: 186px;
+  margin: 10px auto;
   background-color: #d6d8e7;
   border: 2px solid #1e215a;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border-radius: 5px;
   gap: 10px;
   text-decoration: none;
   align-items: center;
   transition: 0.2s;
-  transform: translateX(138%);
+  /* transform: translateX(138%); */
+}
+
+.reportar-falha-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .reportar-falha img {
@@ -609,5 +621,23 @@ label{
   pointer-events: none;
   cursor: not-allowed;
   background-color: #8a9fb9;
+}
+
+@media (min-height: 680px) {
+  .ambiente {
+    height: 380px;
+  }
+  .senha {
+    margin-top: 90px;
+  }
+}
+
+@media (min-height: 800px) {
+  .ambiente {
+    height: 480px;
+  }
+   .senha {
+    margin-top: 130px;
+  }
 }
 </style>

@@ -157,7 +157,7 @@
       :isVisible="show_modalDados"
       @close="show_modalDados = false"
       :conteudos="listaConteudos"
-      :top="'2%'" 
+      :bottom="'2%'" 
       :left="'3%'"
     />
     <ModalEspecificacao
@@ -348,9 +348,11 @@ export default {
               )) {
               this.pontuacao -= 10;
               store.respostas_fase_dois.correcao_missao_sete.push(false);
+              store.respostas_fase_dois.cts_excedentes_missao_sete.push(true);
             } else {
               this.pontuacao += 10;
               store.respostas_fase_dois.correcao_missao_sete.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_sete.push(false);
             }
           }
 
@@ -364,9 +366,11 @@ export default {
               )) {
               this.pontuacao -= 10;
               store.respostas_fase_dois.correcao_missao_sete.push(false);
+              store.respostas_fase_dois.cts_excedentes_missao_sete.push(true);
             } else {
               this.pontuacao += 10;
               store.respostas_fase_dois.correcao_missao_sete.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_sete.push(false);
             }
           }
 
@@ -380,20 +384,24 @@ export default {
               )) {
               this.pontuacao -= 10;
               store.respostas_fase_dois.correcao_missao_sete.push(false);
+              store.respostas_fase_dois.cts_excedentes_missao_sete.push(true);
             } else {
               this.pontuacao += 10;
               store.respostas_fase_dois.correcao_missao_sete.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_sete.push(false);
             }
           }
           
           else {
             this.pontuacao += 10;
             store.respostas_fase_dois.correcao_missao_sete.push(true);
+            store.respostas_fase_dois.cts_excedentes_missao_sete.push(false);
           }
 
         } else {
           this.pontuacao -= 10;
           store.respostas_fase_dois.correcao_missao_sete.push(false);
+          store.respostas_fase_dois.cts_excedentes_missao_sete.push(false);
         }
 
         cts_anteriores.push(caso);
@@ -417,7 +425,7 @@ export default {
 }
 
 .level__content {
-  height: 88%;
+  height: calc(100% - 70px);
   display: flex;
 }
 
@@ -507,7 +515,7 @@ export default {
 
 .container-artefatos {
   width: 98%;
-  height: 63%;
+  height: 270px;
   padding: 14px 18px;
   margin-top: 14px;
   background-color: #c2ccdd;
@@ -723,6 +731,7 @@ export default {
   margin-top: 8px;
   gap: 20px;
   align-items: first baseline;
+  justify-content: center;
 }
 
 .cond-center {
@@ -789,11 +798,24 @@ export default {
 
 .obs2 {
   font-family: "Bai Jamjuree", sans-serif;
-  display: inline-block;
+  display: block;
   font-size: 13px;
   color: #112a53;
   margin-top: 10px;
   margin-left: 14px;
   font-weight: 500;
 }
+
+@media (min-height: 700px) {
+  .container-artefatos {
+    height: 370px;
+  }
+}
+
+@media (min-height: 800px) {
+  .container-artefatos {
+    height: 450px;
+  }
+}
+
 </style>

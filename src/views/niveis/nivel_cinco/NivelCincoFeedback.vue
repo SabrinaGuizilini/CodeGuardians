@@ -148,6 +148,8 @@
 
            <p class="p1">Valores-limite:</p>
 
+           <div class="serpara-exs">
+
            <div class="exercicio-avl">
 
               <div class="part01 invalida">
@@ -172,6 +174,36 @@
               </div>
 
             </div>
+
+            <p class="ou">OU</p>
+
+            <div class="exercicio-avl">
+
+              <div class="part01 invalida">
+                <p>Classe inválida</p>
+                <div class="linha01"></div>
+              </div>
+
+              <span class="valor-limite">71</span>
+              <span class="valor-limite">70</span>
+
+              <div class="part01 valida">
+                <p>Classe válida</p>
+                <div class="linha01"></div>
+              </div>
+
+              <span class="valor-limite">10</span>
+              <span class="valor-limite">9</span>
+
+              <div class="part01 invalida">
+                <p>Classe inválida</p>
+                <div class="linha01"></div>
+              </div>
+
+            </div>
+
+
+           </div>
 
              </div>
             </div>
@@ -456,7 +488,11 @@
                           <p>{{ caso.saida }}</p>
                         </div>
                         <img class="correcao-img-ct" v-if="correcoes_cts[index]" src="@/assets/img/acerto.png" alt="acerto" />
-                        <img class="correcao-img-ct" v-else src="@/assets/img/erro.png" alt="erro" />
+                        <img class="correcao-img-ct" v-if="!correcoes_cts[index] && !cts_excedentes[index]" src="@/assets/img/erro.png" alt="erro" />
+                        <div class="excedente" v-if="!correcoes_cts[index] && cts_excedentes[index]">
+                          <img src="@/assets/img/warning.png" alt="excedente">
+                          <p>(excedente)</p>
+                        </div>
                       </div>
                     </div>
               </div>
@@ -543,7 +579,8 @@ export default {
       validas: [],
       invalidas: [],
       cond_valor_limite: '',
-      valores_limite: []
+      valores_limite: [],
+      cts_excedentes: []
     };
   },
   mounted() {
@@ -561,6 +598,7 @@ export default {
 
     this.casosTeste = [...store.respostas_fase_dois.cts_missao_cinco];
     this.correcoes_cts = [...store.respostas_fase_dois.correcao_missao_cinco];
+    this.cts_excedentes = [...store.respostas_fase_dois.cts_excedentes_missao_cinco];
     setTimeout(this.animarPontuacao, 1500);
   },
   methods: {
@@ -1009,6 +1047,39 @@ export default {
   padding: 6px;
   border-radius: 3px;
   border: 1.4px solid #b6bbe1;
+}
+
+.serpara-exs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.serpara-exs .ou {
+  font-family: "Bai Jamjuree", sans-serif;
+  color: #c6d7eb;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.excedente {
+  position: absolute;
+  left: 300px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.excedente img {
+  width: 18px;
+}
+
+.excedente p {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 13px;
+  color: #c7cfe6;
 }
 
 </style>

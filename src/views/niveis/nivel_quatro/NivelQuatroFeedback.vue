@@ -438,7 +438,7 @@
       :isVisible="showModal"
       @close="showModal = false"
       :paragrafos_modal="paragrafos_modal"
-      :top="'20%'" 
+      :bottom="'20%'" 
       :left="'27%'"
     />
   </div>

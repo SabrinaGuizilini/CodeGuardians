@@ -124,7 +124,7 @@ export default {
   top: 5%;
   left: 12%;
   width: 70%;
-  height: 82%;
+  height: 250px;
   background-color: rgb(203, 210, 230);
   display: flex;
   flex-direction: column;

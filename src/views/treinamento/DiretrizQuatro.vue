@@ -302,4 +302,14 @@ export default {
   opacity: 1;
 }
 
+@media (min-height: 750px) {
+.exercicio-particao {
+  margin-top: 55px;
+}
+.conferir-respostas {
+  bottom: 14%;
+}
+
+}
+
 </style>

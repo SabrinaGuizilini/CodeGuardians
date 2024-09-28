@@ -16,7 +16,7 @@
         </div>
 
         <div class="col">
-          <div class="regra">Regra <br> 1</div>
+          <div class="regra">Regra <br class="o_br"> 1</div>
 
           <div class="select-regra">
             <p class="valor-tabela">{{ valores_tabela[0] }}</p>
@@ -238,8 +238,8 @@
       :isVisible="showModal2"
       @close="showModal2 = false"
       :paragrafos_modal="paragrafos_modal"
-      :top="'1%'" 
-      :left="'6%'"
+      :bottom="'5%'" 
+      :left="'5%'"
     />
   </div>
 </template>
@@ -427,7 +427,7 @@ export default {
 }
 
 .level__content {
-  height: 88%;
+  height: calc(100% - 70px);
   display: flex;
 }
 
@@ -816,5 +816,18 @@ export default {
   font-family: "Bai Jamjuree", sans-serif;
   width: 60px;
   border: 1.3px solid rgb(13, 33, 65);
+}
+
+@media (min-width: 1282px) {
+  .o_br {
+    display: none;
+  }
+}
+
+@media (min-width: 1431px) {
+  .artefato .col .condicoes {
+    height: initial;
+    line-height: initial;
+  }
 }
 </style>

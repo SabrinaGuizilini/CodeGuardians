@@ -13,11 +13,11 @@
       <div class="ex-tabela">
         <div class="col">
           <div class="texto-destaque">Condições</div>
-          <div>Idade >= 18 anos</div>
-          <div>Possui carteira de motorista</div>
+          <div>Nota final >= 5</div>
+          <div>Frequência >= 70%</div>
           <div class="texto-destaque">Ações</div>
-          <div>Pode conduzir</div>
-          <div>Não pode conduzir</div>
+          <div>Aprovado</div>
+          <div>Reprovado</div>
         </div>
 
         <div class="col">
@@ -176,7 +176,7 @@ export default {
       link_prox: "/niveis-teste",
       link_ant: "/tabela-decisao",
       textos: [
-        '<span class="destacado">Exemplo prático:</span> um sistema determina se uma pessoa pode conduzir um veículo com base em duas condições: ter pelo menos 18 anos e possuir carteira de motorista. Com base nessas informações, complete a tabela de decisão abaixo (sem repetições):',
+        '<span class="destacado">Exemplo prático:</span> Um sistema decide se um aluno será aprovado ou reprovado com base em duas condições: nota final ≥ 5 e frequência ≥ 70%. Com base nessas informações, complete a tabela de decisão abaixo (sem repetições):',
       ],
       isClicked: false,
       correcao_realizada: false,
@@ -461,5 +461,15 @@ export default {
 .correcao{
   width: 0.875rem;
   height: 0.875rem;
+}
+
+@media (min-height: 750px) {
+.ex-tabela {
+  margin-top: 55px;
+}
+.conferir-respostas {
+  bottom: 14%;
+}
+
 }
 </style>

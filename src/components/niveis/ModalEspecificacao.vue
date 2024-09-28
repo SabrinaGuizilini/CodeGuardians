@@ -41,10 +41,11 @@ export default {
 <style scoped>
 .modal-overlay {
   position: fixed;
-  top: 13%;
-  left: 15%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -63%);
   width: 70%;
-  height: 74%;
+  max-height: 70%;
   background-color: rgb(203, 210, 230);
   display: flex;
   flex-direction: column;
@@ -52,6 +53,7 @@ export default {
   align-items: center;
   overflow-y: auto;
   padding: 14px;
+  padding-bottom: 30px;
   border-radius: 3px;
   z-index: 1000;
   border: 2px solid rgb(30, 40, 103);

@@ -21,7 +21,7 @@
           <div v-if="correcao_realizada" ref="correcoes1" class="correcoes">
             <img v-if="resp1_correta" src="@/assets/img/acerto.png" alt="acerto" />
             <img v-if="!resp1_correta" src="@/assets/img/erro.png" alt="erro" />
-            <p v-if="!resp1_correta" class="resposta-certa">Correção: Qtd. caracteres &lt; 1</p>
+            <p v-if="!resp1_correta" class="resposta-certa">Correção: Qtd. caracteres &lt; 1 <br> OU Qtd. caracteres > 6</p>
           </div>
         </div>
 
@@ -47,7 +47,7 @@
             <div v-if="correcao_realizada" ref="correcoes3" class="correcoes">
               <img v-if="resp3_correta" src="@/assets/img/acerto.png" alt="acerto" />
               <img v-if="!resp3_correta" src="@/assets/img/erro.png" alt="erro" />
-              <p v-if="!resp3_correta" class="resposta-certa">Correção: Qtd. caracteres > 6</p>
+              <p v-if="!resp3_correta" class="resposta-certa">Correção: Qtd. caracteres > 6 <br> OU Qtd. caracteres &lt; 1</p>
           </div>
         </div>
 
@@ -121,13 +121,13 @@ export default {
   },
   methods: {
     validaResp1() {
-      this.resp1_correta = (this.select1 === "invalida_menor");
+      this.resp1_correta = (this.select1 === "invalida_menor" || this.select1 === "invalida_maior");
     },
     validaResp2() {
      this.resp2_correta = (this.select2 === "valida");
     },
     validaResp3() {
-      this.resp3_correta = (this.select3 === "invalida_maior");
+      this.resp3_correta = (this.select3 === "invalida_maior" || this.select3 === "invalida_menor");
     },
     validarResposta(event) {
       event.preventDefault();
@@ -326,6 +326,16 @@ export default {
 
 .correcoes.active {
   opacity: 1;
+}
+
+@media (min-height: 750px) {
+.exercicio-particao {
+  margin-top: 55px;
+}
+.conferir-respostas {
+  bottom: 14%;
+}
+
 }
 
 </style>

@@ -402,9 +402,11 @@ export default {
               )) {
               this.pontuacao -= 10;
               store.respostas_fase_dois.correcao_missao_cinco.push(false);
+              store.respostas_fase_dois.cts_excedentes_missao_cinco.push(true);
             } else {
               this.pontuacao += 10;
               store.respostas_fase_dois.correcao_missao_cinco.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_cinco.push(false);
             }
           }
 
@@ -418,9 +420,11 @@ export default {
               )) {
               this.pontuacao -= 10;
               store.respostas_fase_dois.correcao_missao_cinco.push(false);
+              store.respostas_fase_dois.cts_excedentes_missao_cinco.push(true);
             } else {
               this.pontuacao += 10;
               store.respostas_fase_dois.correcao_missao_cinco.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_cinco.push(false);
             }
           }
 
@@ -434,20 +438,24 @@ export default {
               )) {
               this.pontuacao -= 10;
               store.respostas_fase_dois.correcao_missao_cinco.push(false);
+              store.respostas_fase_dois.cts_excedentes_missao_cinco.push(true);
             } else {
               this.pontuacao += 10;
               store.respostas_fase_dois.correcao_missao_cinco.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_cinco.push(false);
             }
           }
           
           else {
             this.pontuacao += 10;
             store.respostas_fase_dois.correcao_missao_cinco.push(true);
+            store.respostas_fase_dois.cts_excedentes_missao_cinco.push(false);
           }
 
         } else {
           this.pontuacao -= 10;
           store.respostas_fase_dois.correcao_missao_cinco.push(false);
+          store.respostas_fase_dois.cts_excedentes_missao_cinco.push(false);
         }
 
         cts_anteriores.push(caso);
@@ -471,7 +479,7 @@ export default {
 }
 
 .level__content {
-  height: 88%;
+  height: calc(100% - 70px);
   display: flex;
 }
 
@@ -561,7 +569,7 @@ export default {
 
 .container-artefatos {
   width: 98%;
-  height: 63%;
+  height: 270px;
   padding: 14px 18px;
   margin-top: 14px;
   background-color: #c2ccdd;
@@ -880,6 +888,18 @@ export default {
   padding: 6px;
   border-radius: 3px;
   border: 1.4px solid #090e35;
+}
+
+@media (min-height: 700px) {
+  .container-artefatos {
+    height: 370px;
+  }
+}
+
+@media (min-height: 800px) {
+  .container-artefatos {
+    height: 450px;
+  }
 }
 
 </style>

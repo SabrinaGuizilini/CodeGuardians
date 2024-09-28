@@ -59,7 +59,7 @@ export default {
 <style scoped>
   .background{
     width: 100%;
-    height: 12%;
+    height: 70px;
     background-color: rgba(22, 52, 96, 0.797);
     padding: 12px 16px 12px 16px;
   }

@@ -1,6 +1,6 @@
 <template>
   <Transition>
-  <div class="modal-overlay" v-if="isVisible" :style="{ top: topPosition, left: leftPosition }">
+  <div class="modal-overlay" v-if="isVisible" :style="{ bottom: bottomPosition, left: leftPosition }">
     <div class="modal-header">
       <h3>Ações</h3>
       <span @click="closeModal">X</span>
@@ -25,7 +25,7 @@ export default {
       type: Array,
       required: true
     },
-    top: {
+    bottom: {
       type: String,
     },
     left: {
@@ -33,8 +33,8 @@ export default {
     }
   },
    computed: {
-    topPosition() {
-      return this.top;
+    bottomPosition() {
+      return this.bottom;
     },
     leftPosition() {
       return this.left;
@@ -51,8 +51,8 @@ export default {
 <style scoped>
 .modal-overlay {
   position: fixed;
-  width: 45%;
-  height: 40%;
+  width: 550px;
+  height: 250px;
   background-color: rgb(203, 210, 230);
   display: flex;
   flex-direction: column;
@@ -126,5 +126,11 @@ export default {
 
 .modal-overlay::-webkit-scrollbar-thumb:hover {
   background: #4f6391;
+}
+
+@media (max-height: 630px) {
+  .modal-overlay {
+    bottom: 49% !important;
+  }
 }
 </style>

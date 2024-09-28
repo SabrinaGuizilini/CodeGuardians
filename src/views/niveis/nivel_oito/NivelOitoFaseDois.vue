@@ -192,8 +192,8 @@
       :isVisible="showModal2"
       @close="showModal2 = false"
       :paragrafos_modal="paragrafos_modal"
-      :top="'5%'" 
-      :left="'50%'"
+      :bottom="'5%'" 
+      :left="'4%'"
     />
   </div>
 </template>
@@ -392,7 +392,7 @@ export default {
 }
 
 .level__content {
-  height: 88%;
+  height: calc(100% - 70px);
   display: flex;
 }
 

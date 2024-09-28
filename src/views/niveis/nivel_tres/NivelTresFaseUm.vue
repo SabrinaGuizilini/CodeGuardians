@@ -100,7 +100,7 @@ export default {
     validarRespostas(event) {
       event.preventDefault();
 
-      if(this.respostas[0] === -1 && this.respostas[1] === 0 && this.respostas[2] === 99 && this.respostas[3] === 100 && this.respostas[4] === 240 && this.respostas[5] === 241 && this.respostas[6] === 10000 && this.respostas[7] === 10001) {
+      if((this.respostas[0] === -1 && this.respostas[1] === 0 && this.respostas[2] === 99 && this.respostas[3] === 100 && this.respostas[4] === 240 && this.respostas[5] === 241 && this.respostas[6] === 10000 && this.respostas[7] === 10001) || (this.respostas[0] === 10001 && this.respostas[1] === 10000 && this.respostas[2] === 241 && this.respostas[3] === 240 && this.respostas[4] === 100 && this.respostas[5] === 99 && this.respostas[6] === 0 && this.respostas[7] === -1)) {
         store.pontuacaoJogador.pont_fases_niveis[2][0] = 30;
       }
 
@@ -119,7 +119,7 @@ export default {
   }
 
   .level__content{
-    height: 88%;
+    height: calc(100% - 70px);
     display: flex;
   }
 
@@ -305,5 +305,17 @@ input[type="number"] {
   font-size: 15px;
   font-weight: 500;
   color: #9c443e;
+}
+
+@media (min-width: 1400px) {
+  .valor-limite {
+    width: 48px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .valor-limite {
+    width: 56px;
+  }
 }
 </style>

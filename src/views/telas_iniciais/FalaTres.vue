@@ -28,7 +28,7 @@ export default {
         link_prox: '/treinamento',
         link_ant: '/fala_dois',
         text1: '',
-        text2: 'Mas antes de tudo, você deverá passar por um treinamento especial sobre testes de software, para que tenha as habilidades necessárias para esta jornada.'
+        text2: 'Mas antes de tudo, recomendo que você faça o meu treinamento especial sobre testes de software, para que tenha as habilidades necessárias para esta jornada.'
       }
     },
 }

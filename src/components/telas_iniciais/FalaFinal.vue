@@ -128,4 +128,52 @@ export default {
   margin-bottom: 30px;
 }
 
+@media (min-width: 1500px) {
+  .balao {
+    width: 64rem;
+  }
+  .balao::after {
+    left: -7.5%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .balao {
+    width: 70rem;
+  }
+  .balao::after {
+    left: -6.85%;
+  }
+}
+
+@media (min-width: 1800px) {
+  .balao {
+    width: 80rem;
+  }
+  .balao::after {
+    left: -5.99%;
+  }
+}
+
+@media (min-width: 1900px) {
+  .balao {
+    width: 87rem;
+  }
+  .balao::after {
+    left: -5.5%;
+  }
+}
+
+@media (min-height: 700px) {
+  .balao {
+    height: 56vh;
+  }
+}
+
+@media (min-height: 800px) {
+  .balao {
+    height: 50vh;
+  }
+}
+
 </style>

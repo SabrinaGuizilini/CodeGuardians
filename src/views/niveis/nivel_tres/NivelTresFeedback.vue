@@ -13,6 +13,8 @@
             <div class="resolucao-esperada">
               <h1>Resolução esperada</h1>
               <div class="resolucao-esperada-container">
+              <div class="serpara-exs">
+
               <div class="exercicio-avl">
 
                 <p class="valida_posicionada" style="font-size: 15px;">Classe válida</p>
@@ -48,6 +50,50 @@
                   <p>Classe inválida</p>
                   <div class="linha01 linha_curta"></div>
                 </div>
+
+             </div>
+
+             <p class="ou">OU</p>
+
+
+             <div class="exercicio-avl">
+
+                <p class="valida_posicionada" style="font-size: 15px;">Classe válida</p>
+
+                <p class="invalida_posicionada" style="left: 27%">Classe inválida</p>
+                <p class="valida_posicionada2" style="left: 47%">Classe válida</p>
+                <p class="invalida_posicionada2" style="left: 66%">Classe inválida</p>
+
+                <div class="part01 invalida">
+                  <p>Classe inválida</p>
+                  <div class="linha01 linha_curta"></div>
+                </div>
+
+                <span class="valor-limite">10001</span>
+                <span class="valor-limite">10000</span>
+
+                <div class="linha01 linha_mais_curta_ainda"></div>
+                <span class="valor-limite">241</span>
+                <span class="valor-limite">240</span>
+
+                <div class="linha01 linha_mais_curta"></div>
+
+                <span class="valor-limite">100</span>
+                <span class="valor-limite">99</span>
+
+                <div class="linha01 linha_mais_longa"></div>
+
+                <span class="valor-limite">0</span>
+                <span class="valor-limite">-1</span>
+
+
+                <div class="part01 invalida">
+                  <p>Classe inválida</p>
+                  <div class="linha01 linha_curta"></div>
+                </div>
+
+             </div>
+
 
              </div>
 
@@ -229,7 +275,11 @@
                           <p>{{ caso.saida }}</p>
                         </div>
                         <img class="correcao-img-ct" v-if="correcoes_cts[index]" src="@/assets/img/acerto.png" alt="acerto" />
-                        <img class="correcao-img-ct" v-else src="@/assets/img/erro.png" alt="erro" />
+                        <img class="correcao-img-ct" v-if="!correcoes_cts[index] && !cts_excedentes[index]" src="@/assets/img/erro.png" alt="erro" />
+                        <div class="excedente" v-if="!correcoes_cts[index] && cts_excedentes[index]">
+                          <img src="@/assets/img/warning.png" alt="excedente">
+                          <p>(excedente)</p>
+                        </div>
                       </div>
                     </div>
               </div>
@@ -306,7 +356,8 @@ export default {
       encontrou_falha1,
       encontrou_falha2,
       qtd_falhas_encontradas,
-      valores_limite: []
+      valores_limite: [],
+      cts_excedentes: []
     };
   },
   mounted() {
@@ -318,6 +369,7 @@ export default {
     });
     this.casosTeste = [...store.respostas_fase_dois.cts_missao_tres];
     this.correcoes_cts = [...store.respostas_fase_dois.correcao_missao_tres];
+    this.cts_excedentes = [...store.respostas_fase_dois.cts_excedentes_missao_tres];
     setTimeout(this.animarPontuacao, 1500);
   },
   methods: {
@@ -742,7 +794,41 @@ export default {
 }
 
 .com-margem{
-  margin-top: 60px;
+  margin-top: 80px;
+}
+
+.serpara-exs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.serpara-exs .ou {
+  font-family: "Bai Jamjuree", sans-serif;
+  color: #c6d7eb;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 43px;
+}
+
+.excedente {
+  position: absolute;
+  left: 300px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.excedente img {
+  width: 18px;
+}
+
+.excedente p {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 13px;
+  color: #c7cfe6;
 }
 
 </style>

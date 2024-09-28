@@ -25,6 +25,11 @@
         <span>Vamos lá!</span>
         <img src="@/assets/img/seta-vamos-la.svg" alt="seta direita" />
       </router-link>
+
+      <router-link to="/regra-um" class="pular-treinamento">
+        <span>Pular treinamento</span>
+        <img src="@/assets/img/pular.png" alt="pular" />
+      </router-link>
     </div>
   </div>
 </template>
@@ -178,6 +183,38 @@ li::before {
   animation: slideInX 0.5s forwards;
   opacity: 0;
   animation-delay: 4s;
+}
+
+.pular-treinamento {
+  position: absolute;
+  bottom: 6%;
+  left: 4%;
+  display: inline-flex;
+  background-color: #152b51;
+  padding: 0.875rem 2.30rem;
+  border-radius: 5px;
+  gap: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+  align-items: center;
+  animation: slideInX 0.5s forwards;
+  opacity: 0;
+  animation-delay: 4s;
+}
+
+.pular-treinamento:hover {
+   background-color: #132950;
+}
+
+.pular-treinamento img {
+  width: 1.375rem;
+  margin-top: 0.125rem;
+}
+
+.pular-treinamento span {
+  color: #c1cfdf;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.313rem;
 }
 
 .avancar-botao-treinamento:hover {

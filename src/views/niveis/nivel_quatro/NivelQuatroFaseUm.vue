@@ -26,7 +26,7 @@
         </div>
 
         <div class="col">
-          <div class="regra">Regra <br> 1</div>
+          <div class="regra">Regra <br class="o_br"> 1</div>
 
           <div class="select-regra">
             <select name="select-regra1" v-model="selects[0]">
@@ -269,7 +269,6 @@
         </div>
       </div>
       <p class="obs">* Obs: N/A = sem código retornado e X = qualquer código</p>
-      <p class="obs2">* Clique <span class="link_modal" @click="openModal()">aqui</span> ou no link do enunciado para ver o significado das ações que estão na tabela</p>
         </div>
       </div>
     </div>
@@ -283,7 +282,7 @@
       :isVisible="showModal"
       @close="showModal = false"
       :paragrafos_modal="paragrafos_modal"
-      :top="'5%'" 
+      :bottom="'5%'" 
       :left="'50%'"
     />
 
@@ -365,7 +364,7 @@ export default {
   }
 
   .level__content{
-    height: 88%;
+    height: calc(100% - 70px);
     display: flex;
   }
 
@@ -519,5 +518,15 @@ export default {
   font-size: 14px;
   color: #112a53;
   margin-top: 2px;
+}
+
+@media (min-width: 1282px) {
+  .o_br {
+    display: none;
+  }
+  .col .condicoes {
+    height: initial;
+    line-height: initial;
+  }
 }
 </style>

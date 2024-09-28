@@ -154,4 +154,16 @@ export default {
   box-shadow: 0 0 5px rgba(17, 41, 87, 0.8);
   border-color: #112957; 
 }
+
+@media (min-height: 700px) {
+  .wrapper {
+    padding-top: 8rem;
+  }
+}
+
+@media (min-height: 800px) {
+  .wrapper {
+    padding-top: 12rem;
+  }
+}
 </style>

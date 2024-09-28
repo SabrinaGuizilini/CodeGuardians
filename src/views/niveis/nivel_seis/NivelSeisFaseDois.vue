@@ -216,17 +216,21 @@ export default {
             ) {
               this.pontuacao -= 10;
               store.respostas_fase_dois.correcao_missao_seis.push(false);
+              store.respostas_fase_dois.cts_excedentes_missao_seis.push(true);
             } else {
               this.pontuacao += 10;
               store.respostas_fase_dois.correcao_missao_seis.push(true);
+              store.respostas_fase_dois.cts_excedentes_missao_seis.push(false);
             }
           } else {
             this.pontuacao += 10;
             store.respostas_fase_dois.correcao_missao_seis.push(true);
+            store.respostas_fase_dois.cts_excedentes_missao_seis.push(false);
           }
         } else {
           this.pontuacao -= 10;
           store.respostas_fase_dois.correcao_missao_seis.push(false);
+          store.respostas_fase_dois.cts_excedentes_missao_seis.push(false);
         }
 
         cts_anteriores.push(caso);
@@ -250,7 +254,7 @@ export default {
 }
 
 .level__content {
-  height: 88%;
+  height: calc(100% - 70px);
   display: flex;
 }
 

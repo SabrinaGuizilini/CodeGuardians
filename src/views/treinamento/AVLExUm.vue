@@ -26,7 +26,7 @@
             <div v-if="correcao_realizada" ref="correcoes1" class="correcoes">
               <img v-if="resp1_correta" src="@/assets/img/acerto.png" alt="acerto">
               <img v-if="!resp1_correta" src="@/assets/img/erro.png" alt="erro">
-              <p v-if="!resp1_correta" class="resposta-certa">-1</p>
+              <p v-if="!resp1_correta" class="resposta-certa">-1 OU 11</p>
             </div>
           </div>
 
@@ -39,7 +39,7 @@
              <div v-if="correcao_realizada" ref="correcoes2" class="correcoes">
               <img v-if="resp2_correta" src="@/assets/img/acerto.png" alt="acerto">
               <img v-if="!resp2_correta" src="@/assets/img/erro.png" alt="erro">
-              <p v-if="!resp2_correta" class="resposta-certa">0</p>
+              <p v-if="!resp2_correta" class="resposta-certa">0 OU 10</p>
             </div>
           </div>
 
@@ -57,7 +57,7 @@
              <div v-if="correcao_realizada" ref="correcoes3" class="correcoes">
               <img v-if="resp3_correta" src="@/assets/img/acerto.png" alt="acerto">
               <img v-if="!resp3_correta" src="@/assets/img/erro.png" alt="erro">
-              <p v-if="!resp3_correta" class="resposta-certa">10</p>
+              <p v-if="!resp3_correta" class="resposta-certa">10 OU 0</p>
             </div>
           </div>
 
@@ -70,7 +70,7 @@
              <div v-if="correcao_realizada" ref="correcoes4" class="correcoes">
               <img v-if="resp4_correta" src="@/assets/img/acerto.png" alt="acerto">
               <img v-if="!resp4_correta" src="@/assets/img/erro.png" alt="erro">
-              <p v-if="!resp4_correta" class="resposta-certa">11</p>
+              <p v-if="!resp4_correta" class="resposta-certa">11 OU -1</p>
             </div>
           </div>
 
@@ -161,16 +161,16 @@ export default {
   },
     methods: {
     validaResp1() {
-      this.resp1_correta = (this.select1 === "menos-um");
+      this.resp1_correta = (this.select1 === "menos-um" || this.select1 === "onze");
     },
     validaResp2() {
-     this.resp2_correta = (this.select2 === "zero");
+     this.resp2_correta = (this.select2 === "zero" || this.select2 === "dez");
     },
     validaResp3() {
-      this.resp3_correta = (this.select3 === "dez");
+      this.resp3_correta = (this.select3 === "dez" || this.select3 === "zero");
     },
      validaResp4() {
-      this.resp4_correta = (this.select4 === "onze");
+      this.resp4_correta = (this.select4 === "onze" || this.select4 === "menos-um");
     },
     validarResposta(event) {
       event.preventDefault();
@@ -381,9 +381,10 @@ export default {
 .resposta-certa {
   position: absolute;
   bottom: 2.5rem;
-  right: 1.25rem;
+  /* right: 1.25rem; */
   font-size: 0.875rem;
   color: #9addb5;
+  text-align: center;
 }
 
 .correcoes{
@@ -393,5 +394,15 @@ export default {
 
 .correcoes.active {
   opacity: 1;
+}
+
+@media (min-height: 750px) {
+.exercicio-avl {
+  margin-top: 55px;
+}
+.conferir-respostas {
+  bottom: 14%;
+}
+
 }
 </style>

@@ -238,7 +238,7 @@
       :isVisible="showModal"
       @close="showModal = false"
       :paragrafos_modal="paragrafos_modal"
-      :top="'5%'" 
+      :bottom="'5%'" 
       :left="'50%'"
     />
 
@@ -386,7 +386,7 @@ export default {
   }
 
   .level__content{
-    height: 88%;
+    height: calc(100% - 70px);
     display: flex;
   }
 
@@ -543,5 +543,35 @@ export default {
 
 .acao {
   text-align: center;
+}
+
+@media (min-width: 1500px) {
+  .select-regra select {
+    width: 87px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .select-regra select {
+    width: 94px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .select-regra select {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .select-regra select {
+    width: 110px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .select-regra select {
+    width: 120px;
+  }
 }
 </style>

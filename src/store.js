@@ -58,6 +58,12 @@ export const store = reactive({
     correcao_missao_sete: [],
     cts_missao_oito: [],
     correcao_missao_oito: [],
+    cts_excedentes_missao_um: [],
+    cts_excedentes_missao_dois: [],
+    cts_excedentes_missao_tres: [],
+    cts_excedentes_missao_cinco: [],
+    cts_excedentes_missao_seis: [],
+    cts_excedentes_missao_sete: [],
   },
   respostas_fase_tres: {
     falhas_encontradas_missao_tres: [false, false],

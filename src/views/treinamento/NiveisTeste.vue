@@ -121,4 +121,18 @@ export default {
   height: 15rem;
   margin-right: 3.125rem;
 }
+
+@media (min-height: 730px) {
+.niveis-teste {
+  margin-top: 60px;
+}
+
+}
+
+@media (min-height: 800px) {
+.niveis-teste {
+  margin-top: 100px;
+}
+
+}
 </style>

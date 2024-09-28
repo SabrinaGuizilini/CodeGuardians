@@ -170,7 +170,7 @@ export default {
   }
 
   .level__content{
-    height: 88%;
+    height: calc(100% - 70px);
     display: flex;
   }
 
@@ -336,5 +336,11 @@ export default {
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
   }
+
+  @media (min-width: 1600px) {
+  .exercicio {
+    gap: 90px;
+  }
+}
 
 </style>

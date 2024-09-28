@@ -370,7 +370,7 @@ export default {
   }
 
   .level__content{
-    height: 88%;
+    height: calc(100% - 70px);
     display: flex;
   }
 
@@ -513,5 +513,35 @@ export default {
   display: flex;
   gap: 8px;
   justify-content: start;
+}
+
+@media (min-width: 1450px) {
+  .classe select {
+    width: 80px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .classe select {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .classe select {
+    width: 110px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .classe select {
+    width: 120px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .classe select {
+    width: 140px;
+  }
 }
 </style>
